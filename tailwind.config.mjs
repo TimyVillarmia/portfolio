@@ -15,7 +15,7 @@ export default {
 			'off-black': '#181818',
 			'off-white': '#eeebdd',
 			'primary': '#f8d47a',
-			'dark-gray': '#2e2c2b',
+			'dark-gray-2': '#2e2c2b',
 			'mid-gray': '#4c4a46',
 			'dark-gray': '#21201f',
 			'white': '#ffffff',

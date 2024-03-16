@@ -4,14 +4,14 @@ import { Icon } from 'astro-icon/components';
 ---
 
 
-<div class="flex flex-row items-center justify-between bg-card py-6 px-4 rounded-[8px]">
+<div class="flex flex-row items-center justify-between rounded-lg border-[1px] border-off-white py-6 px-4 ">
     <div class="">
-        <p class="text-base font-bold sm:text-xl">{project.title}</p>
-        <p class="text-base font-light text-[#6b7280] sm:text-xl">{project.category}</p>
+        <p class="font-bold">{project.title}</p>
+        <p class="font-light">{project.category}</p>
     </div>
     <div class="">
         <a href={project.link} target="_blank">
-            <Icon name="mdi:github" class="text-2xl sm:text-5xl"/>
+            <Icon name="mdi:github" class="text-4xl"/>
         </a>
     </div>
 
