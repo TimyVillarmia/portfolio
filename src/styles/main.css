@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'OffBitTrial';
+    src: url(fonts/OffBitTrial-DotBold.ttf) format('truetype');
+}
+
+a {
+    text-decoration: underline;
+}

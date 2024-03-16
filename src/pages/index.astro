@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import Indicator from '../../public/images/indicator.webp';
+import Profile from '../../public/images/profile.webp';
+
+
+import {getCollection, getEntry} from "astro:content";
+import Card from "../components/ProjectCard.astro";
+import PlaygroundCard from "../components/PlaygroundCard.astro";
+import playground from "../data/playground.json";
+
+const projects = await getCollection("projects");
+---
+
+<Layout title="Timy Villarmia">
+	<main  class="text-sm">
+		<section class="container mx-auto py-20">
+			<div>
+				<h1 class="text-xl font-medium">Hey there!, I’m Timy, a computer science student - who enjoys the <span class="font-display">challenge of solving complex problems </span>
+					& <span class="font-display">building stuffs with code.</span>
+				</h1>
+				<div class="flex justify-between items-center">
+					<div class="flex justify-center items-center gap-x-2 my-6">
+						<Icon name="mdi:location"/>
+						<p>Cebu City, PH</p>
+					</div>
+					<div class="flex justify-center items-center gap-x-2">
+						<Icon name="mdi:check-circle-outline" class="text-[#34d399]"/>
+						<p>Available for Internship</p>
+					</div>
+				</div>
+			</div>
+			<div class="flex justify-center pt-10">
+				<Image 
+				src={Indicator}
+				alt="scroll down"
+				class={"h-auto w-28 sm:w-48 lg:w-64"}
+				loading="lazy"
+				decoding="async"
+				/>
+			</div>
+		</section>
+		<section class="container mx-auto bg-dark-gray py-20">
+			<div>
+				<p class="mb-8">
+					I'm a Filipino computer science student passionate about building innovative and user-centric software solutions. From front-end to back-end, I strive to create impactful and seamless digital experiences.
+				</p>
+				<p class="mb-8">
+					Find me elsewhere on the web: <a href="https://www.linkedin.com/in/timyvillarmia/" target="_blank">LinkedIn</a>, <a href="https://github.com/TimyVillarmia" target="_blank">Github</a>, <a href="https://www.facebook.com/VillarmiaTimy" target="_blank">Facebook</a> or e-mail me at <a href="hello@timyvillarmia.com">hello@timyvillarmia.com</a>.
+				</p>
+				<a href="" class="flex items-center no-underline font-bold gap-x-1.5">About Me<span><Icon name="mdi:arrow-right-thin"/></span></a>
+			</div>
+			<div>
+				<Image 
+				src={Profile}
+				alt="Profile"
+				class={"h-auto w-auto rounded-lg mt-20"}
+				loading="lazy"
+				decoding="async"
+				/>
+			</div>
+		</section>
+		<section class="container mx-auto py-20">
+			<div>
+				<p class="font-bold uppercase mb-2">featured work</p>
+				<p>
+					a curated selection of my standout projects, showcasing my skills and creativity over the past few years. Each project represents a unique journey and a testament to my growth as a developer.
+				</p>
+			</div>
+			<div class="py-10">
+				{projects.map((project) => <Card project={project} />)}
+			</div>
+		</section>
+		<section>
+			<div>
+				<p>Playground</p>
+				<p>
+					A collection of my half-finished projects, 
+					random ideas, experiments that are fun, & 
+					sometimes just a little bit weird.
+				</p>
+			</div>
+			<div>
+				{playground.map((project) => <PlaygroundCard project={project} />)}
+			</div>
+
+		</section>
+	</main>
+</Layout>

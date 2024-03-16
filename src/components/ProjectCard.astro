@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+const { project } = Astro.props;
+import {Image} from 'astro:assets';
+
+---
+
+<div class="">
+    <div>
+        <Image 
+        src={project.data.image} 
+        alt={project.data.title}
+        class={"h-auto max-w-full rounded-lg"}
+        loading="lazy"
+        decoding="async"
+        />
+    </div>
+    <div class="py-4">
+        <div class="">
+            <p class="font-bold">{project.data.title}</p>
+            <div class="my-4">
+                {project.data.badges.map((tag) => (
+                    <span class="text-xs font-light mr-2 px-3 py-1.5 rounded-full border-[.5px] border-off-white">{tag}</span>
+                ))}
+            </div>
+        </div>
+        <div>
+            <p class="mb-4">{project.data.description}</p>
+            <a href="" class="flex items-center no-underline font-bold gap-x-1.5">View project<span><Icon name="mdi:arrow-top-right-thin"/></span></a>
+
+        </div>
+    </div>
+</div>
