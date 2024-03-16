@@ -12,10 +12,22 @@ const projectsCollection = defineCollection({
     }),
 });
 
+const profile = defineCollection({
+    type: 'data',
+    schema: z.object({
+    })
+});
 
+const playground = defineCollection({
+    type: 'data',
+    schema: z.object({
+    })
+});
 
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
     'projects': projectsCollection,
+    'profile': profile,
+    'playground': playground
 };

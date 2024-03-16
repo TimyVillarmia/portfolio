@@ -1,10 +1,13 @@
-<div class="container mx-auto">
+---
+const { socials } = Astro.props;
+console.log();
+---
+
+
+<div class="container mx-auto text-sm">
     <div class="flex flex-col justify-center items-center gap-y-6 py-8 uppercase border-off-white border-t-[1px] border-opacity-10">
         <ul class="flex gap-x-4 ">
-            <li>linkedin</li>
-            <li>facebook</li>
-            <li>github</li>
-            <li>email</li>
+            {socials.data["socials"].map((social) => <li><a href={social.url} target="_blank">{social.name}</a></li>)}
         </ul>
         <p>©2024 timy villarmia</p>
     </div>
