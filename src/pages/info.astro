@@ -1,27 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Profile from '../../public/images/profile.webp';
+import { getCollection, getEntry } from 'astro:content';
 
+const profile = await getEntry('data', 'profile');
 ---
 
 <Layout title="Info - Timy Villarmia">
     <main>
-        <div>
-            <h1>info</h1>
-            <p>Who is Timy Villarmia? Explore the journey, skills, and aspirations in the field of computer science.</p>
-        </div>
-        <div>
-            <!-- images -->
-        </div>
-        <div>
+        <section  class="container mx-auto py-28">
+            <div class="text-balance text-center">
+                <h1 class="text-5xl uppercase font-bold mb-2">info</h1>
+                <p>Who is Timy Villarmia? Explore the journey, skills, and aspirations in the field of computer science.</p>
+            </div>
             <div>
-                <h1>about me</h1>
-                <p>I’m Timy — a third-year computer science student. 
+                <Image 
+				src={Profile}
+				alt="Profile"
+				class={"h-auto w-auto rounded-lg mt-20"}
+				loading="lazy"
+				decoding="async"
+				/>
+            </div>
+        </section>
+
+        <section class="container mx-auto py-20">
+            <div>
+                <h1 class="text-4xl font-bold uppercase mb-6">about me</h1>
+                <p class="font-medium text-pretty mb-12">I’m Timy — a third-year computer science student. 
                     I care a lot about using code for positive impact. 
                     Currently based in Cebu City, Philippines.</p>
             </div>
             <div>
-                <p>
-                    I was born and raised in Cebu, PH., the first in my family to attend college, raised by my hardworking single mother who worked as a maid. I got hooked on computers early on and loved playing video games and turned me into a "techie-kid" of the family early on.
+                <p class="whitespace-pre-line">I was born and raised in Cebu, PH., the first in my family to attend college, raised by my hardworking single mother who worked as a maid. I got hooked on computers early on and loved playing video games and turned me into a "techie-kid" of the family early on.
                     
                     In my teenage years, curiosity led me to self-taught photo and video editing, taking on design projects for friends and schools. 
                     
@@ -32,22 +44,63 @@ import Layout from '../layouts/Layout.astro';
                     I’m open to internships, and part-time positions in the Full-Stack Development field.
                 </p>
             </div>
-        </div>
-        <div>
-            <div>
-                <h1>
-                    CAREER + EDUCATION
-                </h1>
-            </div>
-            <div>
-                <div>
+        </section>
 
-                </div>
+        <section class="container mx-auto py-20 flex flex-col gap-y-10">
+            <div class="bg-dark-gray rounded-[40px] py-6 px-6">
                 <div>
-                    
+                    <h1 class="text-4xl font-bold whitespace-pre-line mb-4">CAREER 
+                        + EDUCATION
+                    </h1>
+                    <div class="divide-off-white/25 divide-y-[1px] divide-solid">
+                        <div class="py-6 flex flex-col space-y-6">
+                            {profile.data["experience"].map((experience)=> 
+                            <div>
+                                <p class="text-xs">{experience.date}</p>
+                                <p class="font-bold">{experience.company}</p>
+                                <p>{experience.position}</p>
+                            </div>
+                            )}
+                        </div>
+                        <div class="py-6 flex flex-col space-y-6">
+                            {profile.data["education"].map((education)=> 
+                            <div>
+                                <p class="text-xs">{education.date}</p>
+                                <p class="font-bold">{education.name}</p>
+                                <p>{education.degree}</p>
+                            </div>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="bg-dark-gray rounded-[40px] py-6 px-6">
+                <div>
+                    <h1 class="text-3xl font-bold whitespace-pre-line mb-4">SKILLS
+                        + CERTIFICATIONS
+                    </h1>
+                    <div class="divide-off-white/25 divide-y-[1px] divide-solid">
+                        <div class="py-6">
+                            <p class="mb-4">Here are some technologies I have been working with:</p>
+                            {profile.data["technologies"].map((technologies)=> 
+                            <div>
+                                <p>✦ {technologies}</p>
+                            </div>
+                            )}
+                        </div>
+                        <div class="py-6 flex flex-col space-y-4">
+                            {profile.data["Certificates"].map((certificates)=> 
+                            <div>
+                                <a class="font-bold" href={certificates.CredentialURL}>{certificates.Name}</a>
+                                <p class="text-xs">{certificates.Issuedby}</p>
+                            </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
 </Layout>

@@ -18,7 +18,7 @@
         }
     ],
 
-    "tools": [
+    "technologies": [
         "React",
         "Javascript",
         "TailwindCSS",
@@ -28,26 +28,32 @@
         "Python", 
         "Git", 
         "Bash", 
-        "Figma", 
-        "Figma", 
-        "Adobe Photoshop"
+        "Figma"
     ],
 
-    "Experience": [
+    "education": [
         {
-            "Company": "InterNative Labs, LLC",
-            "Position": "Lead Software Engineer",
-            "Date": "Month 2022 - Current"
+            "name": "Asian College of Technology - College of Computer Studies",
+            "degree": "Bachelor of Science in Computer Science",
+            "date": "2021 – Current"
         },
         {
-            "Company": "InterNative Labs, LLC",
-            "Position": "Lead Software Engineer",
-            "Date": "Month 2022 - Current"
+            "name": "Asian College of Technology - Senior High School",
+            "degree": "Science, Technology, Engineering, and Mathematics (STEM) Strand",
+            "date": "2019 – 2021"
+        }
+    ],
+
+    "experience": [
+        {
+            "company": "InterNative Labs, LLC",
+            "position": "Lead Software Engineer",
+            "date": "2022 - Current"
         },
         {
-            "Company": "InterNative Labs, LLC",
-            "Position": "Lead Software Engineer",
-            "Date": "Month 2022 - Current"
+            "company": "InterNative Labs, LLC",
+            "position": "Lead Software Engineer",
+            "date": "2022 - Year"
         }
     ],
 
