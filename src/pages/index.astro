@@ -19,32 +19,32 @@ const playground = await getEntry('data', 'playground');
 <Layout title="Timy Villarmia">
 	<main>
 		<section class="container mx-auto py-28">
-			<div>
-				<h1 class="text-xl font-medium">Hey there!, I’m Timy, a computer science student - who enjoys the <span class="font-display">challenge of solving complex problems </span>
+			<div class="">
+				<h1 class="text-xl font-medium text-balance sm:text-4xl">Hey there!, I’m Timy, a computer science student - who enjoys the <span class="font-display">challenge of solving complex problems </span>
 					& <span class="font-display">building stuffs with code.</span>
 				</h1>
-				<div class="flex justify-between items-center">
-					<div class="flex justify-center items-center gap-x-2 my-6">
+				<div class="flex justify-between items-center my-6 sm:justify-start sm:gap-x-4">
+					<div class="flex justify-center items-center gap-x-1">
 						<Icon name="mdi:location"/>
 						<p>Cebu City, PH</p>
 					</div>
-					<div class="flex justify-center items-center gap-x-2">
+					<div class="flex justify-center items-center gap-x-1">
 						<Icon name="mdi:check-circle-outline" class="text-[#34d399]"/>
 						<p>Available for Internship</p>
 					</div>
 				</div>
 			</div>
-			<div class="flex justify-center pt-20">
+			<div class="flex justify-center pt-10 sm:justify-start lg:justify-end">
 				<Image 
 				src={Indicator}
 				alt="scroll down"
-				class={"h-auto w-28 sm:w-48 lg:w-64"}
+				class={"h-auto w-auto"}
 				loading="lazy"
 				decoding="async"
 				/>
 			</div>
 		</section>
-		<section class="container mx-auto bg-dark-gray py-20">
+		<section class="container mx-auto bg-dark-gray py-20 text-balance">
 			<div>
 				<p class="mb-8">
 					I'm a Filipino computer science student passionate about building innovative and user-centric software solutions. From front-end to back-end, I strive to create impactful and seamless digital experiences.
@@ -58,7 +58,6 @@ const playground = await getEntry('data', 'playground');
 						<span><Icon name="mdi:arrow-right-thin" class="text-2xl"/></span>
 					</a>
 				</button>
-
 			</div>
 			<div>
 				<Image 
@@ -70,7 +69,7 @@ const playground = await getEntry('data', 'playground');
 				/>
 			</div>
 		</section>
-		<section class="container mx-auto py-20">
+		<section class="container mx-auto py-20 text-balance">
 			<div class="mb-20">
 				<p class="font-bold uppercase mb-2">featured work</p>
 				<p>
@@ -81,7 +80,7 @@ const playground = await getEntry('data', 'playground');
 				{projects.map((project) => <Card project={project} />)}
 			</div>
 		</section>
-		<section class="container mx-auto py-20 bg-dark-gray">
+		<section class="container mx-auto py-20 bg-dark-gray text-balance">
 			<div class="mb-20">
 				<p class="font-bold uppercase mb-2">Playground</p>
 				<p>
