@@ -81,17 +81,20 @@ const playground = await getEntry('data', 'playground');
 			</div>
 		</section>
 		<section class="container mx-auto py-20 bg-dark-gray text-balance">
-			<div class="mb-20">
-				<p class="font-bold uppercase mb-2">Playground</p>
-				<p>
-					A collection of my half-finished projects, 
-					random ideas, experiments that are fun, & 
-					sometimes just a little bit weird.
-				</p>
+			<div class="">
+				<div class="mb-20">
+					<p class="font-bold uppercase mb-2">Playground</p>
+					<p>
+						A collection of my half-finished projects, 
+						random ideas, experiments that are fun, & 
+						sometimes just a little bit weird.
+					</p>
+				</div>
+				<div class="flex flex-col gap-y-4">
+					{playground.data.map((project) => <PlaygroundCard project={project} />)}
+				</div>
 			</div>
-			<div class="flex flex-col gap-y-4">
-				{playground.data.map((project) => <PlaygroundCard project={project} />)}
-			</div>
+
 		</section>
 		<div>
 		</div>

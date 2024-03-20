@@ -15,7 +15,7 @@ import {Image} from 'astro:assets';
         decoding="async"
         />
     </div>
-    <div class="py-4">
+    <div class="py-4 md:flex md:gap-x-10">
         <div class="">
             <p class="font-bold text-3xl">{project.data.title}</p>
             <div class="my-4">
@@ -27,7 +27,6 @@ import {Image} from 'astro:assets';
         <div>
             <p class="mb-4">{project.data.description}</p>
             <a href="" class="flex items-center no-underline font-bold gap-x-1.5">View project<span><Icon name="mdi:arrow-top-right-thin"/></span></a>
-
         </div>
     </div>
 </div>

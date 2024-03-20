@@ -32,7 +32,6 @@ export default {
 			serif: ['Inter', 'sans-serif'],
 			display: ['OffBitTrial', 'sans-serif']
 		},
-
 		extend: {},
 	},
 	plugins: [],

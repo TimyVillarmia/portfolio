@@ -11,7 +11,7 @@ const profile = await getEntry('data', 'profile');
     <main>
         <section  class="container mx-auto py-28">
             <div class="text-balance text-center">
-                <h1 class="text-5xl uppercase font-bold mb-2">info</h1>
+                <h1 class="text-5xl uppercase font-bold mb-2 md:text-8xl">info</h1>
                 <p>Who is Timy Villarmia? Explore the journey, skills, and aspirations in the field of computer science.</p>
             </div>
             <div>
@@ -27,7 +27,7 @@ const profile = await getEntry('data', 'profile');
 
         <section class="container mx-auto py-20">
             <div>
-                <h1 class="text-4xl font-bold uppercase mb-6">about me</h1>
+                <h1 class="text-4xl font-bold uppercase mb-6 md:text-5xl">about me</h1>
                 <p class="font-medium text-pretty mb-12">I’m Timy — a third-year computer science student. 
                     I care a lot about using code for positive impact. 
                     Currently based in Cebu City, Philippines.</p>
@@ -49,7 +49,7 @@ const profile = await getEntry('data', 'profile');
         <section class="container mx-auto py-20 flex flex-col gap-y-10">
             <div class="bg-dark-gray rounded-[40px] py-6 px-6">
                 <div>
-                    <h1 class="text-4xl font-bold whitespace-pre-line mb-4">CAREER 
+                    <h1 class="text-4xl font-bold whitespace-pre-line mb-4 md:text-5xl">CAREER 
                         + EDUCATION
                     </h1>
                     <div class="divide-off-white/25 divide-y-[1px] divide-solid">
@@ -76,22 +76,23 @@ const profile = await getEntry('data', 'profile');
             </div>
             <div class="bg-dark-gray rounded-[40px] py-6 px-6">
                 <div>
-                    <h1 class="text-3xl font-bold whitespace-pre-line mb-4">SKILLS
+                    <h1 class="text-3xl font-bold whitespace-pre-line mb-4 md:text-5xl">SKILLS
                         + CERTIFICATIONS
                     </h1>
                     <div class="divide-off-white/25 divide-y-[1px] divide-solid">
                         <div class="py-6">
                             <p class="mb-4">Here are some technologies I have been working with:</p>
-                            {profile.data["technologies"].map((technologies)=> 
-                            <div>
+                            <div class="columns-2">
+                                {profile.data["technologies"].map((technologies)=> 
                                 <p>✦ {technologies}</p>
+                                )}
                             </div>
-                            )}
+
                         </div>
                         <div class="py-6 flex flex-col space-y-4">
                             {profile.data["Certificates"].map((certificates)=> 
                             <div>
-                                <a class="font-bold" href={certificates.CredentialURL}>{certificates.Name}</a>
+                                <a class="font-bold" target="_blank" href={certificates.CredentialURL}>{certificates.Name}</a>
                                 <p class="text-xs">{certificates.Issuedby}</p>
                             </div>
                             )}
