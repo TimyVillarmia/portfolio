@@ -18,71 +18,79 @@ const playground = await getEntry('data', 'playground');
 
 <Layout title="Timy Villarmia">
 	<main>
-		<section class="container mx-auto py-28">
-			<div class="">
-				<h1 class="text-xl font-medium text-balance sm:text-4xl">Hey there!, I’m Timy, a computer science student - who enjoys the <span class="font-display">challenge of solving complex problems </span>
-					& <span class="font-display">building stuffs with code.</span>
-				</h1>
-				<div class="flex justify-between items-center my-6 sm:justify-start sm:gap-x-4">
-					<div class="flex justify-center items-center gap-x-1">
-						<Icon name="mdi:location"/>
-						<p>Cebu City, PH</p>
-					</div>
-					<div class="flex justify-center items-center gap-x-1">
-						<Icon name="mdi:check-circle-outline" class="text-[#34d399]"/>
-						<p>Available for Internship</p>
+		<section class="py-28 lg:py-40">
+			<div class="container mx-auto">
+				<div>
+					<h1 class="text-xl font-medium text-balance sm:text-4xl xl:text-5xl">Hey there!, I’m Timy, a computer science student - who enjoys the <span class="font-display">challenge of solving complex problems </span>
+						& <span class="font-display">building stuffs with code.</span>
+					</h1>
+					<div class="flex justify-between items-center my-6 sm:justify-start sm:gap-x-8">
+						<div class="flex justify-center items-center gap-x-1">
+							<Icon name="mdi:location"/>
+							<p>Cebu City, PH</p>
+						</div>
+						<div class="flex justify-center items-center gap-x-1">
+							<Icon name="mdi:check-circle-outline" class="text-[#34d399]"/>
+							<p>Available for Internship</p>
+						</div>
 					</div>
 				</div>
+				<div class="flex justify-center pt-10 sm:justify-start lg:justify-end">
+					<Image 
+					src={Indicator}
+					alt="scroll down"
+					class={"h-auto w-auto lg:mr-20"}
+					loading="lazy"
+					decoding="async"
+					/>
+				</div>
 			</div>
-			<div class="flex justify-center pt-10 sm:justify-start lg:justify-end">
-				<Image 
-				src={Indicator}
-				alt="scroll down"
-				class={"h-auto w-auto"}
-				loading="lazy"
-				decoding="async"
-				/>
+
+		</section>
+		<section class="bg-dark-gray py-20 text-pretty">
+			<div class="container mx-auto flex flex-col gap-y-20 lg:flex-row lg:gap-x-10">
+				<div class="lg:basis-1/2">
+					<p class="mb-8">
+						I'm a Filipino computer science student passionate about building innovative and user-centric software solutions. From front-end to back-end, I strive to create impactful and seamless digital experiences.
+					</p>
+					<p class="mb-8">
+						Find me elsewhere on the web: <a href="https://www.linkedin.com/in/timyvillarmia/" target="_blank">LinkedIn</a>, <a href="https://github.com/TimyVillarmia" target="_blank">Github</a>, <a href="https://www.facebook.com/VillarmiaTimy" target="_blank">Facebook</a> or e-mail me at <a href="mailto:hello@timyvillarmia.com">hello@timyvillarmia.com</a>.
+					</p>
+					<button class="rounded-lg border-[1px] border-off-white py-2 px-4">
+						<a href="/info" class="flex items-center no-underline gap-x-1.5">
+							About Me
+							<span><Icon name="mdi:arrow-right-thin" class="text-2xl"/></span>
+						</a>
+					</button>
+				</div>
+				<div class="lg:basis-1/2">
+					<Image 
+					src={Profile}
+					alt="Profile"
+					class={"h-auto w-auto rounded-lg"}
+					loading="lazy"
+					decoding="async"
+					/>
+				</div>
 			</div>
 		</section>
-		<section class="container mx-auto bg-dark-gray py-20 text-balance">
-			<div>
-				<p class="mb-8">
-					I'm a Filipino computer science student passionate about building innovative and user-centric software solutions. From front-end to back-end, I strive to create impactful and seamless digital experiences.
-				</p>
-				<p class="mb-8">
-					Find me elsewhere on the web: <a href="https://www.linkedin.com/in/timyvillarmia/" target="_blank">LinkedIn</a>, <a href="https://github.com/TimyVillarmia" target="_blank">Github</a>, <a href="https://www.facebook.com/VillarmiaTimy" target="_blank">Facebook</a> or e-mail me at <a href="mailto:hello@timyvillarmia.com">hello@timyvillarmia.com</a>.
-				</p>
-				<button class="rounded-lg border-[1px] border-off-white py-2 px-4">
-					<a href="/info" class="flex items-center no-underline gap-x-1.5">
-						About Me
-						<span><Icon name="mdi:arrow-right-thin" class="text-2xl"/></span>
-					</a>
-				</button>
+		<section class="py-20 text-balance">
+			<div class="container mx-auto flex flex-col gap-y-20 lg:flex-row lg:gap-x-10">
+				<div class="lg:basis-1/2">
+					<p class="font-bold uppercase mb-2">featured work</p>
+					<p>
+						a curated selection of my standout projects, showcasing my skills and creativity over the past few years.
+					</p>
+				</div>
+				<div class="lg:basis-1/2">
+					{projects.map((project) => <Card project={project} />)}
+				</div>
 			</div>
-			<div>
-				<Image 
-				src={Profile}
-				alt="Profile"
-				class={"h-auto w-auto rounded-lg mt-20"}
-				loading="lazy"
-				decoding="async"
-				/>
-			</div>
+			
 		</section>
-		<section class="container mx-auto py-20 text-balance">
-			<div class="mb-20">
-				<p class="font-bold uppercase mb-2">featured work</p>
-				<p>
-					a curated selection of my standout projects, showcasing my skills and creativity over the past few years. Each project represents a unique journey and a testament to my growth as a developer.
-				</p>
-			</div>
-			<div>
-				{projects.map((project) => <Card project={project} />)}
-			</div>
-		</section>
-		<section class="container mx-auto py-20 bg-dark-gray text-balance">
-			<div class="">
-				<div class="mb-20">
+		<section class="py-20 bg-dark-gray text-balance">
+			<div class="container mx-auto flex flex-col gap-y-20 lg:flex-row lg:gap-x-10">
+				<div class="lg:basis-1/2">
 					<p class="font-bold uppercase mb-2">Playground</p>
 					<p>
 						A collection of my half-finished projects, 
@@ -90,11 +98,10 @@ const playground = await getEntry('data', 'playground');
 						sometimes just a little bit weird.
 					</p>
 				</div>
-				<div class="flex flex-col gap-y-4">
+				<div class="flex flex-col gap-y-4 lg:basis-1/2">
 					{playground.data.map((project) => <PlaygroundCard project={project} />)}
 				</div>
 			</div>
-
 		</section>
 		<div>
 		</div>
