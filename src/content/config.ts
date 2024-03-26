@@ -14,13 +14,24 @@ const projectsCollection = defineCollection({
 
 const profile = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema: ({image}) => 
+    z.object({
+        socials: z.array(z.object({})),
+        technologies: z.array(z.string()),
+        education: z.array(z.object({})),
+        experience: z.array(z.object({})),
+        certificates: z.array(z.object({})),
+        images: z.array(z.object({
+            src: image(),
+            alt: z.string()
+        })), 
     })
 });
 
 const playground = defineCollection({
     type: 'data',
     schema: z.object({
+
     })
 });
 

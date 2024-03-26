@@ -15,16 +15,16 @@ import {Image} from 'astro:assets';
         decoding="async"
         />
     </div>
-    <div class="py-4 md:flex md:gap-x-10">
+    <div class="py-4 sm:flex sm:gap-x-8">
         <div class="">
-            <p class="font-bold text-3xl">{project.data.title}</p>
+            <p class="font-bold text-3xl opacity-100">{project.data.title}</p>
             <div class="my-4">
                 {project.data.badges.map((tag) => (
                     <span class="text-xs font-light mr-2 px-3 py-1.5 rounded-full border-[.5px] border-off-white">{tag}</span>
                 ))}
             </div>
         </div>
-        <div>
+        <div class="text-sm xl:text-xl">
             <p class="mb-4">{project.data.description}</p>
             <a href="" class="flex items-center no-underline font-bold gap-x-1.5">View project<span><Icon name="mdi:arrow-top-right-thin"/></span></a>
         </div>

@@ -13,7 +13,6 @@ export default {
 		},
 		colors: {
 			'off-black': '#181818',
-			'off-white': '#eeebdd',
 			'primary': '#f8d47a',
 			'dark-gray-2': '#2e2c2b',
 			'mid-gray': '#4c4a46',
@@ -30,7 +29,8 @@ export default {
 		},
 		fontFamily: {
 			serif: ['Inter', 'sans-serif'],
-			display: ['OffBitTrial', 'sans-serif']
+			display: ['OffBitTrial-Regular', 'sans-serif'],
+			'display-bold': ['OffBitTrial-DotBold', 'sans-serif']
 		},
 		extend: {},
 	},

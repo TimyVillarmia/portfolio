@@ -57,7 +57,7 @@
         }
     ],
 
-    "Certificates": [
+    "certificates": [
         {
             "Name": "React Basics",
             "Issuedby": "Coursera",
@@ -80,30 +80,30 @@
         }
     ],
 
-    "Images": [
+    "images": [
         {
-            "src": "/images/1.webp",
-            "alt": "Profile"
+            "src": "/public/images/graduate.webp",
+            "alt": "graduation picture"
         },
         {
-            "src": "/images/2.webp",
-            "alt": "Profile"
+            "src": "/public/images/charity.webp",
+            "alt": "charity event group photo"
         },
         {
-            "src": "/images/3.webp",
-            "alt": "Profile"
+            "src": "/public/images/intrams.webp",
+            "alt": "photo during intramurals"
         },
         {
-            "src": "/images/4.webp",
-            "alt": "Profile"
+            "src": "/public/images/profile.webp",
+            "alt": "headshot photo"
         },
         {
-            "src": "/images/5.webp",
-            "alt": "Profile"
+            "src": "/public/images/kidphoto.webp",
+            "alt": "kid photo"
         },
         {
-            "src": "/images/6.webp",
-            "alt": "Profile"
+            "src": "/public/images/intramsgroup.webp",
+            "alt": "group photo during intramurals"
         }
     ]
 }

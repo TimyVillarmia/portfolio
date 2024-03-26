@@ -1,78 +1,72 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import Profile from '../../public/images/profile.webp';
+import { Image, Picture } from 'astro:assets';
 import { getCollection, getEntry } from 'astro:content';
+import Profile from '../../public/images/profile.webp'
 
-const profile = await getEntry('data', 'profile');
+
+
+const collection = await getEntry('data', 'profile');
+
 ---
 
 <Layout title="Info - Timy Villarmia">
     <main>
-        <section class="py-28 text-center text-balance">
-            <div class="container mx-auto">
+        <section class="mt-60">
+            <div class="container mx-auto text-center pb-60">
                 <div>
                     <h1 class="text-6xl uppercase font-bold mb-2 sm:text-9xl">info</h1>
-                    <p class="">Who is Timy Villarmia? Explore the journey, skills, 
-                        and aspirations in the field of computer science.</p>
-                </div>
-                <div>
-                    <Image 
-                    src={Profile}
-                    alt="Profile"
-                    class={"h-auto w-auto rounded-lg mt-20"}
-                    loading="lazy"
-                    decoding="async"
-                    />
+                    <div class="flex justify-center">
+                        <p class="max-w-lg">Who is Timy Villarmia? Explore the journey, skills, 
+                            and aspirations in the field of computer science.
+                        </p>
+                    </div>
+
                 </div>
             </div>
-        </section>
-
-        <section class="py-20">
-            <div class="container mx-auto flex flex-col gap-y-12 lg:flex-row lg:gap-x-2">
-                <div class="lg:basis-1/2">
-                    <h1 class="text-4xl font-bold uppercase mb-6 md:text-5xl">about me</h1>
-                    <p class="font-medium text-balance">I’m Timy — a third-year computer science student. 
-                        I care a lot about using code for positive impact. 
-                        Currently based in Cebu City, Philippines.</p>
+            <div class="container mx-auto flex flex-col text-balance gap-y-12 lg:flex-row">
+                <div class="lg:basis-1/2 lg:pr-20">
+                    <Picture 
+					src={Profile}
+					alt="Profile"
+					formats={['webp']}
+					class={"h-auto w-auto rounded-lg"}
+					loading="lazy"
+					decoding="async"
+					/>
                 </div>
-                <div class="lg:basis-1/2">
-                    <p class="whitespace-pre-line">I was born and raised in Cebu, PH., the first in my family to attend college, raised by my hardworking single mother who worked as a maid. I got hooked on computers early on and loved playing video games and turned me into a "techie-kid" of the family early on.
+                <div class="lg:basis-1/2 lg:pt-16 lg:pb-32 xl:pt-44 2xl:pt-72 2xl:pb-32">
+                    <h1 class="text-4xl  font-bold  mb-8 md:text-5xl lg:text-8xl lg:mb-28">Hi there, I'm Timy</h1>
+                    <p class="whitespace-pre-line">Growing up in Cebu, Philippines, I was the first in my family to pursue college. Raised by a hardworking single mom who worked as a maid, my love for technology started young. Like most kids, I was hooked on video games and fascinated by tinkering with computers (sometimes fixing, but mostly breaking things, haha!). Despite the occasional "get off the computer" warnings, this early exploration sparked a lifelong passion for technology.
+
+                        This passion led me to study <strong>Computer Science</strong> at the <strong>Asian College of Technology</strong>, where I'm currently in my third year. As a programmer, I enjoy building the entire picture, from front-end to back-end. However, I'm also deeply interested in Artificial Intelligence and Game Development., While academics keep me busy, volunteering for <strong>Ngiti Charity</strong>, a non-profit organization, allows me to give back to the community.
                         
-                        In my teenage years, curiosity led me to self-taught photo and video editing, taking on design projects for friends and schools. 
-                        
-                        Today, I’m a 3rd-year computer science student at Asian College of Technology. While I primarily focus on the Full-Stack Development, I have a great interest in Artificial Intelligence and Game-Development. I proudly serve as a technical director for the non-profit organization "Ngiti”.
-                        
-                        Outside of coding, you'll often find me casually playing games, consuming tech contents on YouTube, and and constantly exploring new technologies and enrolling to various courses, especially in artificial intelligence and game development.
-                        
-                        I’m open to internships, and part-time positions in the Full-Stack Development field.
+                        Outside coding, you'll find me unwinding with casual gaming and tech content on YouTube. I'm an INFJ personality type at heart, which means I'm driven by a desire to help others. This translates to my coding philosophy – I believe in building things that make a positive impact. Empathy, integrity, and trust are core values that guide me in everything I do.
                     </p>
                 </div>
             </div>
-
         </section>
-
         <section class="container mx-auto py-20 flex flex-col gap-y-10">
-            <div class="bg-dark-gray rounded-[40px] py-10 px-10">
+            <div class="bg-dark-gray rounded-[40px] py-6 px-6 lg:py-10 lg:px-10">
                 <div class="flex flex-col gap-y-4 lg:flex-row">
-                    <h1 class="text-4xl font-medium whitespace-pre-line md:text-5xl lg:basis-1/2">CAREER 
+                    <h1 class="text-3xl font-bold whitespace-pre-line md:text-5xl lg:basis-1/2">CAREER 
                         + EDUCATION
                     </h1>
                     <div class="divide-off-white/25 divide-y-[1px] divide-solid lg:basis-1/2">
                         <div class="pb-6 flex flex-col space-y-6">
-                            {profile.data["experience"].map((experience)=> 
+                            {collection.data["experience"].map((experience)=> 
                             <div>
                                 <p class="text-xs">{experience.date}</p>
-                                <p class="font-bold">{experience.company}</p>
+                                <p class="font-bold opacity-100">{experience.company}</p>
                                 <p>{experience.position}</p>
                             </div>
                             )}
                         </div>
                         <div class="py-6 flex flex-col space-y-6">
-                            {profile.data["education"].map((education)=> 
+                            {collection.data["education"].map((education)=> 
                             <div>
                                 <p class="text-xs">{education.date}</p>
-                                <p class="font-bold">{education.name}</p>
+                                <p class="font-bold opacity-100">{education.name}</p>
                                 <p>{education.degree}</p>
                             </div>
                             )}
@@ -80,26 +74,26 @@ const profile = await getEntry('data', 'profile');
                     </div>
                 </div>
             </div>
-            <div class="bg-dark-gray rounded-[40px] py-10 px-10">
+            <div class="bg-dark-gray rounded-[40px] py-6 px-6 lg:py-10 lg:px-10">
                 <div class="flex flex-col gap-y-4 lg:flex-row">
-                    <h1 class="text-3xl font-medium whitespace-pre-line md:text-5xl lg:basis-1/2">SKILLS
+                    <h1 class="text-3xl font-bold whitespace-pre-line md:text-5xl lg:basis-1/2">SKILLS
                         + CERTIFICATIONS
                     </h1>
                     <div class="divide-off-white/25 divide-y-[1px] divide-solid lg:basis-1/2">
                         <div class="pb-6">
-                            <p class="mb-4">Here are some technologies I have been working with:</p>
+                            <p class="mb-4 ">Here are some technologies I have been working with:</p>
                             <div class="columns-2">
-                                {profile.data["technologies"].map((technologies)=> 
+                                {collection.data["technologies"].map((technologies)=> 
                                 <p>✦ {technologies}</p>
                                 )}
                             </div>
 
                         </div>
                         <div class="py-6 flex flex-col space-y-4">
-                            {profile.data["Certificates"].map((certificates)=> 
+                            {collection.data["certificates"].map((certificates)=> 
                             <div>
                                 <a class="font-bold" target="_blank" href={certificates.CredentialURL}>{certificates.Name}</a>
-                                <p class="text-xs">{certificates.Issuedby}</p>
+                                <p class="">{certificates.Issuedby}</p>
                             </div>
                             )}
                         </div>

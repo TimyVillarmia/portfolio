@@ -29,7 +29,7 @@ const profile = await getEntry('data', 'profile');
 		<ViewTransitions/>
 	</head>
 	<body class="text-base md:text-xl">
-		<header class="container mx-auto">
+		<header>
 			<Nav/>
 		</header>
 		<slot/>
@@ -43,7 +43,12 @@ const profile = await getEntry('data', 'profile');
 	html {
 		font-family: "Inter", sans-serif;
 		background: #181818;
-		color: #eeebdd;
+		color: #ffffff;
+	}
+
+	p {
+		color: #ffffff;
+		opacity: 80%;
 	}
 
 </style>

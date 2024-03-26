@@ -1,13 +1,23 @@
-<section class="py-60 text-center text-balance">
+---
+import { Picture } from 'astro:assets';
+import gif from '../../public/images/hello.gif';
+---
+
+<section class="py-40 text-center text-balance 2xl:py-80">
     <div class="container mx-auto">
         <div class="mb-10">
-            <h1 class="font-display text-5xl md:text-7xl">CONNECT & COLLAB</h1>
+            <h1 class="font-display-bold text-5xl md:text-7xl">CONNECT & COLLAB</h1>
             <p>I'm always open to new opportunities and connections. Whether you have a project you'd 
                 like to discuss, want to share your work, or just say hi — please don't hesitate to reach out.
             </p>
         </div>
-        <button class="rounded-lg border-[1px] border-off-white py-4 px-8">
-            <a class="no-underline" href="mailto: timyvillarmia@gmail.com">say hello</a>
+        <button class="group rounded-full border-[1px] border-off-white py-4 px-8 hover:bg-white hover:text-off-black">
+            <div class="flex items-center gap-x-4">
+                <a class="no-underline font-display-bold text-3xl md:text-5xl" href="mailto: timyvillarmia@gmail.com">say hello</a>
+                <div class="slide-left hidden w-9 h-auto group-hover:inline md:w-12">
+                    <Picture src={gif} formats={['gif']} alt="penguin waving" class="w-auto h-auto"/>
+                </div>
+            </div>
         </button>
     </div>
 </section>

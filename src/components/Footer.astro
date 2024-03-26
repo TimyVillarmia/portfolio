@@ -4,8 +4,8 @@ console.log();
 ---
 
 
-<div class="container mx-auto text-sm">
-    <div class="flex flex-col justify-center items-center gap-y-6 py-8 uppercase border-off-white border-t-[1px] border-opacity-10 lg:flex-row lg:justify-between">
+<div class="text-sm border-white border-t-[1px] border-opacity-10">
+    <div class="container mx-auto flex flex-col justify-center items-center gap-y-6 py-8 uppercase  lg:flex-row lg:justify-between">
         <ul class="flex gap-x-4 ">
             {socials.data["socials"].map((social) => <li><a href={social.url} target="_blank">{social.name}</a></li>)}
         </ul>

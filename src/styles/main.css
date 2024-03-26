@@ -2,13 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "OffBitTrial-Regular";
+  src: url(fonts/OffBitTrial-101.ttf) format("truetype");
+}
 
 @font-face {
-    font-family: 'OffBitTrial';
-    src: url(fonts/OffBitTrial-DotBold.ttf) format('truetype');
+  font-family: "OffBitTrial-DotBold";
+  src: url(fonts/OffBitTrial-DotBold.ttf) format("truetype");
 }
 
 a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+.slide-left {
+  -webkit-animation: slide-left 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+  animation: slide-left 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+.slide-top:hover {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
